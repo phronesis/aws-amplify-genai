@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-aicofounder-dev-62328-authRole",
+      "UnauthRoleArn": "arn:aws:iam::080169100169:role/amplify-aicofounder-dev-62328-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::080169100169:role/amplify-aicofounder-dev-62328-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-aicofounder-dev-62328-deployment",
+      "UnauthRoleName": "amplify-aicofounder-dev-62328-unauthRole",
+      "StackName": "amplify-aicofounder-dev-62328",
+      "StackId": "arn:aws:cloudformation:eu-west-1:080169100169:stack/amplify-aicofounder-dev-62328/0618ae70-4a1a-11ee-8bb1-0261c780d8b5",
+      "AmplifyAppId": "d3w30l3w4zhygj"
+    }
+  }
+}
