@@ -10,6 +10,47 @@
       "StackName": "amplify-aicofounder-dev-62328",
       "StackId": "arn:aws:cloudformation:eu-west-1:080169100169:stack/amplify-aicofounder-dev-62328/0618ae70-4a1a-11ee-8bb1-0261c780d8b5",
       "AmplifyAppId": "d3w30l3w4zhygj"
+    },
+    "categories": {
+      "function": {
+        "processPromptRequest": {
+          "sagemakerEndpointName": "arn:aws:sagemaker:us-east-1:080169100169:endpoint/jumpstart-dft-hf-llm-falcon-7b-instruct-bf16",
+          "deploymentBucketName": "amplify-aicofounder-dev-62328-deployment",
+          "s3Key": "amplify-builds/processPromptRequest-7137655664424c774e4f-build.zip"
+        }
+      },
+      "api": {
+        "apiCounderJHB": {}
+      }
+    }
+  },
+  "stage": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-aicofounder-stage-214803-authRole",
+      "UnauthRoleArn": "arn:aws:iam::080169100169:role/amplify-aicofounder-stage-214803-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::080169100169:role/amplify-aicofounder-stage-214803-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-aicofounder-stage-214803-deployment",
+      "UnauthRoleName": "amplify-aicofounder-stage-214803-unauthRole",
+      "StackName": "amplify-aicofounder-stage-214803",
+      "StackId": "arn:aws:cloudformation:us-east-1:080169100169:stack/amplify-aicofounder-stage-214803/31397720-4a9b-11ee-a402-122dff0ad54d",
+      "AmplifyAppId": "dxy5f1ve11j4l"
+    },
+    "categories": {
+      "function": {
+        "processPromptRequest": {
+          "deploymentBucketName": "amplify-aicofounder-stage-214803-deployment",
+          "s3Key": "amplify-builds/processPromptRequest-6735456d73695a313134-build.zip",
+          "sagemakerEndpointName": "jumpstart-dft-hf-llm-falcon-7b-instruct-bf16"
+        },
+        "aicofounderbootstraplayer": {
+          "deploymentBucketName": "amplify-aicofounder-stage-214803-deployment",
+          "s3Key": "amplify-builds/aicofounderbootstraplayer-LambdaLayerVersion42602860-build.zip"
+        }
+      },
+      "api": {
+        "apiCounderJHB": {}
+      }
     }
   }
 }

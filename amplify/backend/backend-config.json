@@ -1,1 +1,81 @@
-{}
+{
+  "api": {
+    "apiCounderJHB": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "processPromptRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "aicofounderbootstraplayer": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "processPromptRequest": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "aicofounderbootstraplayer"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_aicofounderbootstraplayer_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "aicofounderbootstraplayer"
+        }
+      ]
+    },
+    "AMPLIFY_function_aicofounderbootstraplayer_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "aicofounderbootstraplayer"
+        }
+      ]
+    },
+    "AMPLIFY_function_processPromptRequest_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "processPromptRequest"
+        }
+      ]
+    },
+    "AMPLIFY_function_processPromptRequest_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "processPromptRequest"
+        }
+      ]
+    },
+    "AMPLIFY_function_processPromptRequest_sagemakerEndpointName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "processPromptRequest"
+        }
+      ]
+    }
+  }
+}

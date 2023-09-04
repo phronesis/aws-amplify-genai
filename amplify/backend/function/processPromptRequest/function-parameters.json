@@ -1,0 +1,18 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "aicofounderbootstraplayer",
+      "env": "stage",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
+  ],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "sagemakerEndpointName",
+      "environmentVariableName": "SAGEMAKER_ENDPOINT_NAME"
+    }
+  ],
+  "permissions": {}
+}
