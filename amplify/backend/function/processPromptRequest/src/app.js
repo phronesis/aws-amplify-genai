@@ -52,31 +52,40 @@ app.get('/generator/*', function(req, res) {
 
 app.post('/generator', async function(req, res) {
   
-  // const body = req.body
+  const body = req.body
   // const context = body.context
   let postData = {
     EndpointName: process.env.SAGEMAKER_ENDPOINT_NAME,
     ContentType: "application/json",
     Body: JSON.stringify({
-      "inputs": `Can you write an 80-120 words long children story about reading`,
+      "inputs": `Can you provide me a fitness plan taking into account the following information:
+      Current weight: ${body.weight}
+      Current height: ${body.height}
+      Current fitness level: ${body.fitness}
+      Goal: ${body.goal}`,
       "parameters": {
-        "max_new_tokens": 300,
+        "max_new_tokens": 1000,
         "return_full_text": false,
         "do_sample": true,
         "top_k":10
       }
     })
   }
-  console.log(process.env.SAGEMAKER_ENDPOINT_NAME)
 
-  //post data to sagemaker endpoint
- const command = new InvokeEndpointCommand(postData)
- const response =  await sageMakerClient.send(command)
+  try {
+      //post data to sagemaker endpoint
+  const command = new InvokeEndpointCommand(postData)
+  const response =  await sageMakerClient.send(command)
   //get response
   const jsonString = Buffer.from(response.Body).toString('utf8')
   const story = JSON.parse(jsonString)[0]['generated_text']
   //process response and send back to client
-  return res.json({success: 'post call succeed!', url: req.url, body: story})
+  return res.json({success: 'post call succeed!', url: req.url, body: story}) 
+  } catch (error) {
+    console.log(error)
+  }
+
+
 });
 
 app.post('/generator/*', function(req, res) {
