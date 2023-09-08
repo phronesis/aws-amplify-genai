@@ -40,7 +40,7 @@
       "function": {
         "processPromptRequest": {
           "deploymentBucketName": "amplify-aicofounder-stage-214803-deployment",
-          "s3Key": "amplify-builds/processPromptRequest-31476f63696978746370-build.zip",
+          "s3Key": "amplify-builds/processPromptRequest-6474347a6f7574434641-build.zip",
           "sagemakerEndpointName": "jumpstart-dft-hf-llm-falcon-7b-instruct-bf16"
         },
         "aicofounderbootstraplayer": {

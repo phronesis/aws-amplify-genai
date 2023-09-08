@@ -58,11 +58,7 @@ app.post('/generator', async function(req, res) {
     EndpointName: process.env.SAGEMAKER_ENDPOINT_NAME,
     ContentType: "application/json",
     Body: JSON.stringify({
-      "inputs": `Can you provide me a fitness plan taking into account the following information:
-      Current weight: ${body.weight}
-      Current height: ${body.height}
-      Current fitness level: ${body.fitness}
-      Goal: ${body.goal}`,
+      "inputs": `${body.prompt}`,
       "parameters": {
         "max_new_tokens": 1000,
         "return_full_text": false,
